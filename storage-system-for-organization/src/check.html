@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check</title>
+</head>
+
+<body>
+    <div class="container">
+        <headerA>
+            <subA style="text-align:left">
+                <a href="index.html">
+                    <img src="images/back.png" width="30px">
+                </a>
+            </subA>
+            <subA>
+                <h1>Check Status</h1>
+            </subA>
+            <subA style="text-align:right">
+                <img src="images/transparent.png" width="30px">
+            </subA>
+        </headerA>
+
+        <label for="itemID">Item ID:</label><br />
+        <input type="text" id="itemIDcheck" /><br />
+        <button class="button" onclick="checkStatus()">Search</button><br />
+        <p>
+            <tet id='checkItemID1'> </tet>
+            <b id='checkItemID2'> </b>
+        </p>
+        <p> 
+            <tet id='checkItemName1'> </tet> 
+            <b id='checkItemName2'> </b> 
+        </p>
+        <p>
+            <tet id='checkItemStatus1'> </tet>
+            <b id='checkItemStatus2'> </b>
+        </p>
+        <p>
+            <tet id='checkItemTime1'> </tet>
+            <b id='checkItemTime2'> </b>
+        </p>
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js" type="application/javascript"></script>
+    <script src="storageScript.js"></script>
+</body>
+
+</html>

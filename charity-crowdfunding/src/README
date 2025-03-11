@@ -1,0 +1,12 @@
+library
+
+pip install py-solc-x
+pip install web3
+pip install flask
+
+
+1) Run Ganache
+2) smart_contract/contract_deploy.py
+3) Run add_sample_data.py
+4) Run web_interface.py
+5) Navigate to localhost:5000

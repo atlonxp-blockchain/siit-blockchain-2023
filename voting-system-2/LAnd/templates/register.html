@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Form</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+
+<!--===============================================================================================-->	
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"> 
+</head>
+
+<body>
+    <div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+    
+    <h2 class="register-form ">Register Form</h2> 
+    <form class="register-left" action="/register" method="POST">
+        <label for="username">Username:</label>
+        <input class="register-fill" type="text"placeholder="Enter Username"  id="username" name="username" required><br><br> 
+
+        <label for="password">Password:</label>
+        <input class="register-fill" type="password" placeholder="Enter Password" id="password" name="password" required><br><br>
+
+        <label for="firstname">First Name:</label>
+        <input class="register-fill" type="text" placeholder ="Enter Firstname"id="firstname" name="firstname" required><br><br>
+
+        <label for="lastname">Last Name:</label>
+        <input class="register-fill" type="text" placeholder="Enter Lastname" id="lastname" name="lastname" required><br><br>  
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</div>
+</div>
+</div> 
+
+</html>  

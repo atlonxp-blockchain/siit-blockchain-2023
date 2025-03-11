@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-popup.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0512bbcf48.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        var alertMessage = "{{ messages[0] }}";
+        alert(alertMessage);
+    </script>
+    {% endif %}
+    {% endwith %}
+
+    <div id="nav-body">
+        <div id="nav-logo" onclick="window.location.href = '{{ url_for('landing') }}'">
+            <img src="{{ url_for('static', filename='img/nav-logo.png') }}">
+            <span>My</span>
+            <span>Tracker</span>
+        </div>
+    </div>
+
+
+    <div id="content-body">
+        <span>Let us help you.</span>
+        <span>Track the product here!</span>
+
+        <div id="track-body">
+            <div>
+                <form action="/tracking" method="get">
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" name="product_id" placeholder="Product ID here" required>
+                    </div>
+                    <button type="submit" id="track-button">
+                        <i class="fa-solid fa-magnifying-glass" style="margin-right:8px"></i> Track
+                    </button>
+                </form>
+            </div>
+
+            <button onclick="showLogin()">
+                <i class="fa-solid fa-user" style="margin-right:8px"></i> Log in
+            </button>
+
+        </div>
+
+        <img id="landing-right" src="{{ url_for('static', filename='img/landing-right.png') }}">
+    </div>
+
+
+    <div class="popup" id="login-popup">
+        <div class="popup-header">
+            <img src="{{ url_for('static', filename='img/nav-logo.png') }}">
+            <span>Tracker</span>
+            <img src="{{ url_for('static', filename='img/close_default.png') }}" id="close-login"
+                onclick="closeLogin()">
+        </div>
+        <span>Log in</span>
+        <form action="/profile" method="post">
+            <input class="textlogin" name="username" type="text" placeholder="username" required>
+            <input name="password" type="password" placeholder="password" required>
+            <input name="type" type="submit" value="Log in">
+        </form>
+        <h2><span>or</span></h2>
+        <button onclick="showRegister()">Sign up</button>
+    </div>
+
+    <div class="popup" id="register-popup">
+        <div class="popup-header">
+            <img src="{{ url_for('static', filename='img/nav-logo.png') }}">
+            <span>Tracker</span>
+            <img src="{{ url_for('static', filename='img/close_default.png') }}" id="close-login"
+                onclick="closeRegister()">
+        </div>
+        <span>Register</span>
+        <form method="post" action="/profile">
+            <input name="username" type="text" placeholder="username" required minlength="5">
+            <input name="password" type="password" placeholder="password" required maxlength="10">
+            <textarea name="name" placeholder="name" required></textarea>
+            <textarea name="surname" placeholder="surname" required></textarea>
+            <textarea name="number" placeholder="telephone number" required></textarea>
+            <textarea name="email" placeholder="email" required></textarea>
+            <input name="address" type="hidden" value=" ">
+            <input name="type" type="submit" value="Sign up">
+        </form>
+        <h2><span>or</span></h2>
+        <button onclick="showLogin()">Log in</button>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.querySelector("#login-popup").style.display = "flex";
+            closeRegister();
+        }
+
+
+        function showRegister() {
+            document.querySelector("#register-popup").style.display = "flex";
+            closeLogin();
+        }
+
+        function closeLogin() {
+            document.querySelector("#login-popup").style.display = "none";
+        }
+
+        function closeRegister() {
+            document.querySelector("#register-popup").style.display = "none";
+        }
+
+
+    </script>
+
+</body>
+
+
+</html>

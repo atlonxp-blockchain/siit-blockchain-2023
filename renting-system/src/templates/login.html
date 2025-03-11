@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>komfyhomies</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style9.css') }}">
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Hello Welcome to login Landlord!</h1><br>
+        <p>Welcome back you've <br> been missed!</p>
+        <form action="/accountlandlord" method="POST">
+            <input type="text" name="userName" placeholder="Enter Name">
+           
+            <p class="recover">
+                <a href="/registerRenter">Have you register yet?</a>
+            </p>
+            <script>
+                window.onload = function() {
+                  var message = "{{ message|safe }}";
+                  if (message) {
+                    alert(message);
+                  }
+                };
+              </script>
+            <input type="submit" name="value" value="Login Landlord" required>
+            <br />
+            </input>
+            <div class="not-member">
+                Come to Home <a href="/newindex">HOOOOMMEEE!!!</a>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div class="wrapper">
+        <h1>Hello Welcome to login Renter!</h1><br>
+        <p>Welcome back you've <br> been missed!</p>
+        <form action="/accountrenter" method="POST">
+            <input type="text" name="userName" placeholder="Enter Name">
+  
+          
+            <input type="submit" name="value" value="Login Renter" required>
+            <br />
+            </input>
+            <div class="not-member">
+                Come to Home <a href="/newindex">HOOOOMMEEE!!!</a>
+            </div>
+        </form>
+        
+         
+        
+     
+    </div>
+</body>
+
+</html>

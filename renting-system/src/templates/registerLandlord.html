@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>komfyhomies</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style9.css') }}">
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Welcome to Register Landlord!</h1><br>
+        <p>Welcome back you've <br> been missed!</p>
+        <form action="/accountlandlord" method="POST">
+            <input type="text" name="userName" placeholder="Enter Name">
+            <input type="text" name="dormName" placeholder="Enter dorm name">
+            <p class="recover">
+                <a href="/registerRenter">OR you are renter</a>
+            </p>
+            <input type="submit" name="value" value="registerlandlord">
+                <br />
+            </input>
+            
+        </form>
+        <!-- Assuming you have a base template that other templates extend -->
+<!-- Add the following code in your base template -->
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <script>
+    var alertMessage = "{{ messages[0] }}";
+    alert(alertMessage);
+  </script>
+  {% endif %}
+  {% endwith %}
+
+
+        <div class="not-member">
+            Already a member? <a href="/registerLandlord">Get Rent Now</a>
+        </div>
+    </div>
+</body>
+
+</html>

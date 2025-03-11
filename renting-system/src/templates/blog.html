@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>komfyhomies</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
+
+  <!-- nav bar start  -->
+
+  <header id="nav" class="site-header position-fixed text-white bg-dark">
+    <nav id="navbar-example2" class="navbar navbar-expand-lg ">
+     
+      <div class="container ">
+      
+        <a class="navbar-brand" href="./index.html"><img src="./images/logo.png"></a>
+
+
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"><ion-icon name="menu-outline"></ion-icon></button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 ">
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#">Buying</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#">Renting</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#">Selling</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#contact">Contant Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link me-4 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a href="about.html" class="dropdown-item">About</a></li>
+                  <li><a href="blog.html" class="dropdown-item">Blog</a></li>
+                  <li><a href="contact.html" class="dropdown-item">Contact</a></li>
+                  <li><a href="single-post.html" class="dropdown-item">Single</a></li>
+                  <li><a href="styles.html" class="dropdown-item">Styles</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#"></a>
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#">Login</a>
+              </li>
+  
+              <li class="nav-item">
+                <a class="btn-medium btn btn-primary" href="#">Sign up</a>
+              </li>
+            </ul>
+         
+          </div>
+        </div>
+
+      
+      </div>
+    </nav>
+  </header>
+
+	
+  <section id="page-billboard">
+    <div id="home" class="container  ">
+      <div class="page-billboard-container">
+        <h1  class=" text-capitalize  lh-1 mb-3">Our Blog</h1>
+        <span class="item"><a href="index.html" class="text-white">Home</a></span> &nbsp; / &nbsp; <span class="item">Blog</span>  
+      </div>
+    </div>
+  </section>
+	
+	
+	<section id="latest-blog" class="scrollspy-section padding-large">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-12">
+					
+					<!-- post grid -->
+					<div class="post-grid">
+						<div class="row" data-masonry='{"percentPosition": true }'>
+							
+							<div class="col-md-4">
+								
+								<article class="post-item">
+	
+									<figure>
+										<a href="#" class="image-hvr-effect">
+											<img src="images/katie-musial-Zf5zT1torbg-unsplash.png" alt="post" class="post-image">			
+										</a>
+									</figure>
+	
+									<div class="post-content">	
+										<div class="post-meta">Events</div>
+										<h2 class="post-title"><a href="single-post.html">modern vibes bedrooms, todays trending design</a></h2>
+										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+										<a href="single-post.html" class="btn-link">Read more</a>
+									</div>
+								</article>
+	
+							</div>
+	
+							<div class="col-md-4">
+	
+								<article class="post-item">
+									<figure>
+										<a href="#" class="image-hvr-effect">
+											<img src="images/lance-anderson-QdAAasrZhdk-unsplash.png" alt="post" class="post-image">
+										</a>
+									</figure>
+									<div class="post-content">	
+										<div class="post-meta">Events</div>
+										<h2 class="post-title"><a href="single-post.html">How to make minimalist living rooms pop-out</a></h2>
+										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+										<a href="single-post.html" class="btn-link">Read more</a>
+									</div>
+								</article>
+							</div>
+	
+							<div class="col-md-4">
+								
+								<article class="post-item">
+	
+									<figure>
+										<a href="#" class="image-hvr-effect">
+											<img src="images/pexels-scott-webb-532569.png" alt="post" class="post-image">			
+										</a>
+									</figure>
+	
+									<div class="post-content">	
+										<div class="post-meta">Events</div>
+										<h2 class="post-title"><a href="single-post.html">modern vibes bedrooms, todays trending design</a></h2>
+										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+										<a href="single-post.html" class="btn-link">Read more</a>
+									</div>
+								</article>
+	
+							</div>
+	
+							<div class="col-md-4">
+	
+								<article class="post-item">
+									<figure>
+										<a href="#" class="image-hvr-effect">
+											<img src="images/katie-musial-Zf5zT1torbg-unsplash.png" alt="post" class="post-image">
+										</a>
+									</figure>
+									<div class="post-content">	
+										<div class="post-meta">Events</div>
+										<h2 class="post-title"><a href="single-post.html">How to make minimalist living rooms pop-out</a></h2>
+										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+										<a href="single-post.html" class="btn-link">Read more</a>
+									</div>
+								</article>
+							</div>
+	
+							<div class="col-md-4">
+								<article class="post-item">
+									<figure>
+										<a href="#" class="image-hvr-effect">
+											<img src="images/pexels-scott-webb-532569.png" alt="post" class="post-image">
+										</a>
+									</figure>
+									<div class="post-content">		
+										<div class="meta-date">Mar 27, 2021</div>			
+										<h2 class="post-title"><a href="single-post.html">how to make your resort that looks outstanding</a></h2>
+										<p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+										<a href="single-post.html" class="btn-link">Read more</a>
+									</div>
+								</article>
+							</div>
+	
+						</div>
+					</div>
+					<!-- / post grid -->
+	
+				</div>
+	
+			</div>
+	
+		</div>
+	</section>
+
+  <!-- Footer start  -->
+  <section id="footer">
+    <div class="container footer-container">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5  ">
+
+        <div class="col-md-4">
+          <h3><img src="./images/logo.png"></h3>
+          <p>Neque, vestibulum sed varius magna et at. Eu, adipiscing morbi augue.</p>
+          <i class="bi-facebook pe-4"></i>
+          <i class="bi-instagram pe-4"></i>
+          <i class="bi-twitter pe-4"></i>
+          <i class="bi-youtube pe-4"></i>
+        </div>
+
+        <div class="col-md-2">
+          <h5>Project</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Houses</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Rooms</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Flats</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Appartments</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h5>Company</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">How we work ?</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Capital </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Security </a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h5>Movement</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Movement</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Support us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <h5>Help</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Privacy </a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Condition</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">Blog</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 ">FAQs</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 ">
+        <div class="col-md-8 d-flex align-items-center">
+        <p clas>© 2023 TemplatesJungle, Inc. All rights reserved.</p>
+
+        </div>
+        <div class="col-md-4 d-flex align-items-center">
+          <p>Free HTML template by: <a href="https://templatesjungle.com/" class="link-primary" target="_blank">TemplatesJungle</a></p>
+
+        </div>
+
+      </footer>
+    </div>
+  </section>
+
+  
+
+
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Let'vote!</title> 
+
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+
+<!--===============================================================================================-->	
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"> 
+    
+</head>
+<style>
+table,
+    td,
+    tr {
+
+    border: 1px solid black; 
+    margin: 0 100px 120px 0; 
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 180px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+    }
+    </style>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="vote-topic"> 
+                    <h1>Let's Vote</h1> 
+                </div> 
+                
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        var alertMessage = "{{ messages[0] }}";
+        alert(alertMessage);
+    </script>
+    {% endif %}
+    {% endwith %}
+    
+    <form action="/doingvote" method="POST">
+        <table classname="style-table"> 
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Party</th>
+                <th>Campaign</th>
+            </tr>
+            {% for candidate in info %}
+            <tr>
+                <td>
+                    <label>{{ candidate[0] }}</label>
+                    <input type="checkbox" class="myCheckbox" onclick="uncheckOtherCheckboxes(this)"
+                        name="candidate_name" value="{{ candidate[1] }}">
+                </td>
+                <td>{{ candidate[1] }}</td>
+                <td>{{ candidate[2] }}</td>
+                <td>{{ candidate[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="vote-btn">
+        <button type="submit">Vote</button>  
+        </div>
+
+    </form>
+
+    <script>
+        function uncheckOtherCheckboxes(checkbox) {
+            var checkboxes = document.querySelectorAll(".myCheckbox");
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i] !== checkbox) {
+                    checkboxes[i].checked = false;
+                }
+            }
+        }
+    </script>
+
+    <div class="add-candidate-btn">
+    <button onclick="window.location.href = '/add_candidate'">Go to Add Candidate</button> 
+    </div>
+                  
+    
+      
+     
+     <div class="start-vote">
+    <button onclick="window.location.href='/start'" style="color: black; padding: 10px 20px; border: none; cursor: pointer;">Start Vote</button>
+    </div>
+     <div class="end-vote">
+    <button onclick="window.location.href='/end'" style="color: black; padding: 10px 20px; border: none; cursor: pointer;">End Vote</button>
+    </div> 
+</div>
+</div>
+</div>
+</body>
+
+</html>  

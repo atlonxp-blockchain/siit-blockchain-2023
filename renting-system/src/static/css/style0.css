@@ -1,0 +1,501 @@
+/*
+Theme Name: Rentiz
+Theme URI: 
+Author: TemplatesJungle
+Author URI: https://templatesjungle.com/
+Description: Rentiz is Bootstrap 5 HTML Template for real estate by TemplatesJungle.
+Version: 1.2
+*/
+
+/** Base Styles
+--------------------------------------------------------------*/
+
+
+:root {
+    --accent-color: #1AA090;
+    /* --secondary-color: #E2EAF1; */
+    --dark-color: #121B25;
+    --grey-color: #83898F;
+    --body-text-color: #FFFFFF;
+    --light-text-color: #D6D6D6;
+    --link-color: #092035;
+  }
+  
+  /** Typography
+  --------------------------------------------------------------*/
+  body {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.6em;
+    color: var(--body-text-color);
+    background-color:var(--dark-color);
+
+  }
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    color: var(--body-text-color);
+  }
+
+  h1, .h1{
+    font-size: 68px;
+  }
+
+  h2, .h2{
+    font-size: 48px;
+  }
+
+  em {
+    font-weight: 700;
+  }
+
+  ul{
+    padding: 0;
+  }
+
+  p {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--light-text-color);
+    font-size: 18px;
+  }
+
+  li.residence-list{
+    list-style: none;
+    margin-right: 10px;
+  }
+
+  /* a {
+    color: var(--body-text-color);
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+  }
+  a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+  } */
+
+  i{
+    color: var(--light-text-color);
+  }
+
+  i:hover {
+    color: var(--body-text-color);
+    text-decoration: none;
+  }
+
+  .btn {
+    --bs-btn-border-radius: 0 rem;
+  }
+
+  .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--accent-color);
+    --bs-btn-border-color:var(--accent-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg:var(--accent-color);
+    --bs-btn-hover-border-color: var(--accent-color);
+  
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--accent-color);
+    --bs-btn-active-border-color: var(--accent-color);
+    
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--accent-color);
+    --bs-btn-disabled-border-color: var(--accent-color);
+  }
+
+
+ /* navbar  */
+  
+
+
+.text-white .nav-link.active, .text-white .nav-link:focus, .text-white .nav-link:hover {
+    color: var(----body-text-color);
+}
+
+.nav-link.active, .nav-link:focus, .nav-link:hover {
+  color: var(----body-text-color);
+}
+
+.nav-link {
+  
+  color: var(--light-text-color);
+  font-size: 16px;
+  position: relative;
+}
+
+.nav-link:not(.dropdown-toggle):after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  transition: width 0.3s ease-out;
+}
+
+
+.nav-link.active:after {
+  width: 100%;
+  
+}
+
+
+
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: background 0.3s ease-out;
+}
+
+/* ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+  align-items: center;
+  align-content: center;
+  display: flex;
+} */
+
+/* div#offcanvasNavbar2 {
+  align-items: center;
+  align-content: center;
+  display: flex;
+} */
+
+  a.navbar-brand{
+    color: var(--body-text-color);
+  }
+
+  a.nav-link.dropdown-toggle{
+    color: #D6D6D6;
+    font-size: 16px;
+  }
+
+  .offcanvas.show {
+    background-color: var(--dark-color);
+}
+
+
+  /* billboard  */
+
+  .row.billboard-row {
+    display: flex;
+  }
+
+  .form-select {
+    border: 1px solid transparent;
+    border-radius: none;
+  }
+
+  .form-select:focus {
+    border-color: transparent;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem transparent;
+  }
+
+  .billboard-select {
+    border-right: 1px solid #E8E8E8;
+    padding-right: 0px;
+    padding-top: 25px;
+  }
+
+  .billboard-btn{
+    padding-left: 0px;
+  }
+
+
+  nav.navbar.navbar-expand-lg.billboard-nav {
+    min-width: 782px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    background: #fff;
+  }
+
+  button.btn.btn-primary.btn-lg.billboard-search {
+    padding: 24px;
+    border: 5px solid white;
+    width: 100%;
+  }
+ 
+
+ 
+  #billboard{
+    margin-top: 120px;
+    margin-bottom: 80px;
+  }
+  
+
+
+
+
+
+/* residence  */
+
+.card {
+  --bs-card-border-width: none;
+  --bs-card-border-radius: none;
+  --bs-card-inner-border-radius: none;
+  background-color: transparent !important;
+
+ }
+
+ .card-title{
+   font-size: 26px;
+ }
+
+section#residence {
+  background-image : url(./images/residence.png) ;
+  position: relative;
+}
+
+.swiper-button-next.residence-arrow,.swiper-button-prev.residence-arrow {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  padding: initial;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 270px;
+  z-index: 5;
+  cursor: pointer;
+  --swiper-navigation-size: 20px;
+  font-weight: bold;
+  margin-top: 70px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+
+
+
+li.residence-list {
+  padding-right: 20px;
+}
+
+.residence-btn {
+  display: flex;  
+  justify-content: center;  
+}
+
+button.btn.btn-primary.btn-lg.my-lg-5 {
+  padding: 22px 42px;
+}
+
+
+ /* testimonial  */
+
+ p.testimonial-p {
+  font-size: 32px;
+  color: var(--body-text-color);
+}
+
+.testimonial-swiper-button{
+  bottom: 135px;
+  right: 213px;
+  width: 120px;
+}
+
+.swiper-button-prev.testimonial-arrow, .swiper-button-next.testimonial-arrow{
+  color: #FFFFFF;
+  --swiper-navigation-size: 30px;
+  font-weight: bold;
+}
+
+.arrow-divider{
+  font-size: 30px;
+  color: var(--grey-color);
+  padding-left: 56px;
+  padding-bottom: 6px;
+}
+
+
+/* footer  */
+
+section#footer {
+  background: #1A242F;
+}
+
+.link-primary{
+  color: var(--light-text-color) !important;
+  border-bottom: 1px solid var(--light-text-color);
+}
+
+.link-primary:hover {
+  color:var(--body-text-color)!important;
+  
+}
+
+footer.row {
+  padding: 120px 0px;
+}
+
+
+
+/* pages start  */
+
+section#page-billboard {
+  margin-top: 180px;
+  margin-bottom: 80px;
+}
+
+
+
+/* about section start  */
+
+img.abt-img {
+  width: inherit;
+}
+
+
+
+
+/* blog section start  */
+
+a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+a:hover{
+  color: var(--body-text-color);
+}
+
+.post-item{
+  max-width: 370px;
+  margin-bottom: 30px;
+}
+
+.post-grid .post-item .post-image {
+  width: 100%;
+}
+
+.post-item .btn-link {
+  display: block;
+  color: var(--light-text-color);
+  position: relative;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.post-item .post-image {
+  margin-right: 20px;
+}
+
+.post-item .btn-link:hover:after {
+  width: 90px;
+}
+.post-item .btn-link:after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid var(--light-text-color);
+  width: 20px;
+  transition: width 0.3s ease-out;
+}
+
+.btn-link, .btn-link:hover {
+  color: var(--body-text-color);
+}
+
+
+
+/* Contact Us page start  */
+
+.padding-large {
+  padding-top: 7em;
+  padding-bottom: 7em;
+}
+
+
+
+/* single-post page start  */
+
+.commentorImg {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+
+
+/* style page start  */
+
+.accordion-button:not(.collapsed) {
+  color: var(--body-text-color);
+  background-color: transparent;
+}
+
+.accordion {
+  --bs-accordion-color: var(--light-text-color);
+  --bs-accordion-bg: none;
+  --bs-accordion-btn-color: var(--body-text-color);
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: none;
+
+  box-shadow: none;
+}
+
+.nav-tabs {
+  --bs-nav-tabs-border-width: none;
+  --bs-nav-tabs-link-active-color: none;
+  --bs-nav-tabs-link-active-bg: none;
+    border-bottom: 1px solid var(--light-text-color);
+}
+
+.card.style-card.mb-4.rounded-3.shadow-sm {
+  --bs-card-border-width: 1px;
+  --bs-card-border-color: var(--light-text-color);
+}
+
+.border-primary {
+ 
+  border-color: var(--accent-color) !important;
+ 
+}
+
+button.btn.btn-dark {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #424649;
+  --bs-btn-border-color: #424649;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #212529;
+  --bs-btn-hover-border-color: #212529;
+}
+
+
+.btn-outline-primary {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+
+.btn-outline-primary:hover {
+  color: #111;
+  background-color: var(--grey-color);
+  border-color: var(--grey-color);
+}
+
+.bg-primary {
+  background-color: var(--accent-color)!important;
+}
+
+.table-dark{
+  --bs-table-border-color: none;
+}
+
+.bi{
+  fill: #fff;
+}

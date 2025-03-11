@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- My CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style8.css') }}">
+
+    <title>komfyhomies</title>
+</head>
+
+<body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-house'></i>
+            <span class="text">komfyhomies</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="#">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Wallet</span>
+                </a>
+    
+    </section>
+    <!-- SIDEBAR -->
+
+
+
+    <!-- CONTENT -->
+    <section id="content">
+
+        <!-- MAIN -->
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>Dashboard</h1>
+                </div>
+
+                <a href="/addroom" class="btn-download1"> Add room</a>
+        
+                <a href="/withdrawlandlord" class="btn-download">
+                    <span class="text">Withdraw</span>
+                </a>
+                <a href="/landlordTerminateC" class="btn-download">
+                    <span class="text">Terminate Contact</span>
+                </a>
+                <a href="/getpending" class="btn-download">
+                    <span class="text">Get pending termination</span>
+                </a>
+
+                <a href="/newindex" class="btn-download1">
+                    <span class="text">Home</span>
+                </a>
+            </div>
+
+            <ul class="box-info">
+                <li>
+                    <i class='bx bxs-dollar-circle'></i>
+                    <span class="text">
+                        <h3>{{balance}}</h3>
+                        <p>Balance</p>
+                    </span>
+                </li>
+            </ul>
+
+
+          
+        </main>
+        <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+
+</body>
+
+</html>

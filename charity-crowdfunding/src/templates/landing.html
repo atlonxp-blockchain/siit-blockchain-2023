@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Funding!</title>
+    <link href="{{ url_for('static', filename='landing.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        var alertMessage = "{{ messages[0] }}";
+        alert(alertMessage);
+    </script>
+    {% endif %}
+    {% endwith %}
+
+    <div id="header">
+        <div id="name">XXXXXXX XXXXXXXX</div>
+        <div id="ETH">XXX ETH</div>
+    </div>
+    <div id="wrapper-body">
+        <div id="total-wrapper">
+            <div id="total">
+                <table>
+                    <tr>
+                        <td class="ETH-value">XXXXX ETH</td>
+                        <td class="ETH-value">XXXXX ETH</td>
+                    </tr>
+                    <tr>
+                        <td class="total-label">Total Funding</td>
+                        <td class="total-label">Total Donate</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-project-overlay" id="login-popup">
+        <div class="popup-project-content">
+            <h1 style="margin-top:50px;">Login</h1>
+            <form id="form-project" action="/login" method="post">
+                <label>Username</label>
+                <input name="username" type="text" placeholder="Username" required>
+                <label>Password</label>
+                <input name="password" type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <button type="button" onclick="register()" style="margin-top:0;">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-project-overlay" id="register-popup" style="display:none;">
+        <div class="popup-project-content">
+            <h1 style="margin-top:50px;">Register</h1>
+            <form id="form-project" action="/register" method="post">
+                <label>Username</label>
+                <input name="username" type="text" placeholder="Username" required>
+                <label>Password</label>
+                <input name="password" type="password" placeholder="Password" required>
+                <label>Name</label>
+                <input name="firstname" type="text" placeholder="first name" required>
+                <label>Surname</label>
+                <input name="lastname" type="text" placeholder="last name" required>
+                <button type="submit">Register</button>
+                <button type="button" onclick="login()" style="margin-top:0;">Log in</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function register() {
+            document.querySelector("#login-popup").style.display = "none";
+            document.querySelector("#register-popup").style.display = "flex";
+        }
+
+        function login() {
+            document.querySelector("#register-popup").style.display = "none";
+            document.querySelector("#login-popup").style.display = "flex";
+        }
+
+    </script>
+</body>
+
+</html>

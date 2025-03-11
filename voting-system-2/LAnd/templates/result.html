@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <!--===============================================================================================-->	
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+    
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+    
+    
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+    
+    <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+    
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+    
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"> 
+    </head>
+    <style>
+     table,
+    td,
+    tr {
+
+    border: 1px solid black; 
+    margin: 0 100px 120px 0; 
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 180px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+    } 
+
+    </style>
+ <body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+            <h3>Voting Result</h3> 
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Score</th>
+          
+            
+        </tr>
+        {% for result in score %}
+        <tr>
+            
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    </div>
+    </div> 
+</body>
+</html>   

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  
+
+<head>
+    <meta charset="UTF-8">
+    <title>komfyhomies</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style9.css') }}">
+
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Available room ID:</h1>
+        <br>
+        <p>Room ID:{{rooms}} <br> </p>
+        <form action="/showroomprice" method="POST">
+            <input type="dormName" name="dormName" placeholder="Enter dorm name" required>
+            <input type="roomID" name="roomID" placeholder="add your room ID" required>
+            <input type="submit" name="value" value="Get price">
+            <br /></input>
+        </form>
+        
+        <div class="not-member">
+            Come to Home <a href="/newindex">HOOOOMMEEE!!!</a>
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <script>
+            var alertMessage = "{{ messages[0] }}";
+            alert(alertMessage);
+        </script>
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+</html>

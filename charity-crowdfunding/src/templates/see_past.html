@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Funding!</title>
+    <link href="{{ url_for('static', filename='homepage.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        var alertMessage = "{{ messages[0] }}";
+        alert(alertMessage);
+    </script>
+    {% endif %}
+    {% endwith %}
+    <div id="header">
+        <div id="name">{{firstname}} {{lastname}}</div>
+        <div id="ETH">{{ETH}} ETH</div>
+    </div>
+    <div id="wrapper-body">
+        <div id="total-wrapper">
+            <div id="total">
+                <table>
+                    <tr>
+                        <td class="ETH-value">{{total_fund}} ETH</td>
+                        <td class="ETH-value">{{total_donate}} ETH</td>
+                    </tr>
+                    <tr>
+                        <td class="total-label">Total Funding</td>
+                        <td class="total-label">Total Donate</td>
+                    </tr>
+                    <tr colspan="2" onclick="window.location.href = '{{ url_for('homepage') }}'">
+                        <td>Back to present funding</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        {% for id in project_id_index %}
+        <div id="fund-wrapper">
+            <div class="fund">
+                <div>
+                    <span>{{project_list[id][1]}}</span>
+                    <span onclick="open_funder('#funder-list-of-{{project_list[id][0]}}');">Deadline:
+                        {{project_list[id][6]}}</span>
+                </div>
+                <div>{{project_list[id][2]}}</div>
+                <div>
+                    <span>Total Earn: {{(project_list[id][3])/1000000000000000000}} ETH</span>
+                    <span>Goal: {{(project_list[id][4])/1000000000000000000}} ETH</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-funder-overlay" style="display:none" id="funder-list-of-{{project_list[id][0]}}">
+            <div class="popup-funder-content">
+                <button class="X-funder" onclick="close_funder('#funder-list-of-{{project_list[id][0]}}');">X</button>
+                <h1>Funder List</h1>
+                <table style="width:80%;">
+                    <tr>
+                        <th style="width:80%;">Funder Address</th>
+                        <th style="width:20%;">Value</th>
+                    </tr>
+                    {% for funder in funder_list[id] %}
+                    <tr>
+                        <td style="width:80%;">{{funder[0]}}</td>
+                        <td style="width:20%;">{{funder[1]/1000000000000000000}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+    <button id="add-project" onclick="open_project();">+</button>
+    <button id="logout" onclick="window.location.href = '{{ url_for('logout') }}'"><i
+            class="fa fa-sign-out"></i></button>
+
+    <div class="popup-project-overlay">
+        <div class="popup-project-content">
+            <button class="X-project" onclick="close_project();">X</button>
+            <h1>New Donation</h1>
+            <form id="form-project" action="/add_project" method="post">
+
+                <label>Topic</label>
+                <input name="topic" type="text" placeholder="Your donation topic" required>
+                <label>Description</label>
+                <input name="desc" type="text" placeholder="Your description" required>
+                <label>Goal</label>
+                <input name="goal" type="text" placeholder="Project goal" pattern="^\d+(\.\d+)?$" required>
+                <label>Deadline</label>
+                <input name="deadline" type="date" placeholder="Project deadline" required>
+
+                <label>Password</label>
+                <input name="password" type="password" placeholder="Please confirm password" required>
+                <button type="submit">Add Project</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function close_fund(element) {
+            document.querySelector(element).style.display = "none";
+        }
+
+        function open_fund(element) {
+            document.querySelector(element).style.display = "flex";
+        }
+
+        function close_funder(element) {
+            document.querySelector(element).style.display = "none";
+        }
+
+        function open_funder(element) {
+            document.querySelector(element).style.display = "flex";
+        }
+
+        function close_project() {
+            close_buttons = document.querySelectorAll(".popup-project-overlay");
+            close_buttons.forEach(element => {
+                element.style.display = "none";
+            });
+        }
+
+        function open_project() {
+            open_buttons = document.querySelectorAll(".popup-project-overlay");
+            open_buttons.forEach(element => {
+                element.style.display = "flex";
+            });
+        }
+    </script>
+</body>
+
+</html>

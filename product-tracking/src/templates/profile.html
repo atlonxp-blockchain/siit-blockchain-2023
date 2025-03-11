@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login-popup.css') }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/0512bbcf48.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <script>
+    var alertMessage = "{{ messages[0] }}";
+    alert(alertMessage);
+  </script>
+  {% endif %}
+  {% endwith %}
+  <div id="nav-body">
+    <div id="nav-logo" onclick="window.location.href = '{{ url_for('landing') }}'">
+      <img src="{{ url_for('static', filename='img/nav-logo.png') }}" />
+      <span>My</span>
+      <span>Tracker</span>
+    </div>
+    <div class="nav-button-bar">
+      <div class="nav-button">
+        <div id="nav-logo" onclick="window.location.href = '{{ url_for('product') }}'">
+          <img src="{{ url_for('static', filename='img/home-icon.png') }}" />
+        </div>
+      </div>
+      <div class="nav-button">
+        <div id="nav-logo" onclick="window.location.href = '{{ url_for('my_profile') }}'">
+          <img src="{{ url_for('static', filename='img/profile-icon.png') }}" />
+        </div>
+      </div>
+      <div class="nav-button">
+        <div id="nav-logo" onclick="window.location.href = '{{ url_for('logout') }}'">
+          <img src="{{ url_for('static', filename='img/logout-icon.png') }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content-body">
+    <div id="top-div">
+      <img src="{{ url_for('static', filename='img/back.png') }}"
+        onclick="window.location.href = '{{ url_for('product') }}'" style="cursor: pointer" />
+      <span class="TextHeader">&nbsp&nbspProfile</span>
+      <img src="{{ url_for('static', filename='img/profile-icon.png') }}" />
+    </div>
+    <form class="FlexProfile3" action="/profile" method="post" class="form">
+      <div class="Flexcontainer">
+        <div class="FlexProfile1">
+          <label1 for="username">Username : {{username}}</label1><br />
+        </div>
+        <div class="DivFlexProfile">
+          <div class="FlexProfile">
+            <label for="name">Name</label><br />
+            <textarea disabled id="name" name="name" maxlength="40">
+{{name}}</textarea>
+          </div>
+          <div class="FlexProfile">
+            <label for="surname">Surname</label><br />
+            <textarea disabled id="surname" name="surname" maxlength="40">
+{{surname}}</textarea>
+          </div>
+        </div>
+        <div class="DivFlexProfile">
+          <div class="FlexProfile">
+            <label for="number">Telephone number</label><br />
+            <textarea disabled id="number" name="number" maxlength="40">
+{{number}}</textarea>
+          </div>
+          <div class="FlexProfile">
+            <label for="email">Email</label><br />
+            <textarea disabled id="email" name="email" maxlength="40">
+{{email}}</textarea>
+          </div>
+        </div>
+        <div class="FlexProfile">
+          <label for="address">Address</label><br />
+          <textarea disabled id="address" name="address" maxlength="250">{{address}}</textarea>
+        </div>
+        <div id="button-div">
+          <button class="Button" type="button" onclick="edit()" id="edit-button">
+            Edit Profile
+          </button>
+          <button class="Button" type="button" onclick="confirmEdit()" id="confirm-button" style="display: none"
+            id="confirm-button">
+            Confirm
+          </button>
+          <button class="Button" type="button" id="cancel-button" style="display: none" onclick="cancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="popup" id="confirm-popup">
+        <div class="popup-header">
+          <img src="{{ url_for('static', filename='img/nav-logo.png') }}" />
+          <span>Tracker</span>
+          <img src="{{ url_for('static', filename='img/close_default.png') }}" id="close-login" onclick="cancel()" />
+        </div>
+        <span>Please Confirm</span>
+        <input name="password" type="password" placeholder="password" required />
+        <button type="submit" name="type" value="change_profile">Confirm</button>
+    </form>
+  </div>
+  </div>
+
+  <!-- HTML markup goes here -->
+
+  <!-- HTML markup goes here -->
+
+  <script>
+    function edit() {
+      document.querySelectorAll("textarea").forEach((textarea) => {
+        textarea.disabled = false;
+      });
+
+      document.querySelector("#edit-button").style.display = "none";
+      document.querySelector("#cancel-button").style.display = "inline";
+      document.querySelector("#confirm-button").style.display = "inline";
+    }
+
+    function cancel() {
+      document.querySelectorAll("textarea").forEach((textarea) => {
+        textarea.disabled = true;
+      });
+
+      document.querySelector("#edit-button").style.display = "inline";
+      document.querySelector("#confirm-button").style.display = "none";
+      document.querySelector("#cancel-button").style.display = "none";
+      document.querySelector("#confirm-popup").style.display = "none";
+      document.querySelector("#overlay").style.display = "none";
+    }
+
+    function confirmEdit() {
+      document.querySelector("#confirm-popup").style.display = "flex";
+      document.querySelector("#overlay").style.display = "block";
+    }
+
+    function confirmCancel() {
+      cancel();
+    }
+  </script>
+</body>
+
+</html>

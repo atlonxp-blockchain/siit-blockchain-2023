@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  
+
+<head>
+    <meta charset="UTF-8">
+    <title>komfyhomies</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style9.css') }}">
+
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Withdraw</h1>
+        <br>
+        <p> <br> </p>
+        <form action="/accountrenter" method="POST">
+            <input type="username" name="userName" placeholder="Enter user name" required>
+            <input type="amount" name="amount" placeholder="amount" required>
+            <input type="submit" name="value" value="withdraw">
+            <br /></input>
+            <p class="recover">
+                <a href="/accountrenter">GO BACKKKK!!</a>
+            </p>
+            <div class="not-member">
+                Come to Home <a href="/newindex">HOOOOMMEEE!!!</a>
+            </div>
+        </form>
+        
+    </div>
+</body>
+
+</html>

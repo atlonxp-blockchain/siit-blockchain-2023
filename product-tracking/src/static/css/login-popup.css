@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.49), rgba(255, 255, 255, 0.49)), radial-gradient(98.15% 98.15% at 50% 1.85%, rgba(255, 197, 77, 0.3) 37.01%, rgba(254, 239, 208, 0.3) 100%), linear-gradient(0deg, #FFFFFF, #FFFFFF), url(image.png);
+    /* Drop Shadow */
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 4px rgba(0, 0, 0, 0.36);
+    border-radius: 25px;
+    width: 30vw;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+.popup-header {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.popup-header img {
+    width: 48px;
+}
+
+.popup-header span {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    color: #F17228;
+    margin-left: 5px;
+}
+
+#close-login {
+    position: absolute;
+    align-self: center;
+    left: 5%;
+    transform: scale(0.5);
+}
+
+#close-login:hover {
+    content: url("../img/close_hover.png");
+}
+
+.popup span:nth-child(2) {
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.popup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.popup input,
+.popup button,
+.popup textarea {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 10px 5px;
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize: none;
+
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.popup input[type="text"],
+.popup input[type="password"],
+textarea {
+    height: 50px;
+    border: 1px solid #AEAEAE;
+    text-indent: 16px;
+}
+
+.popup input[type="submit"] {
+    border: none;
+    width: 62.5%;
+    background-color: #F88C70;
+    color: white;
+}
+
+.popup h2 {
+    width: 60%;
+    text-align: center;
+    border-bottom: 2px solid #AEAEAE;
+    line-height: 0.1em;
+
+}
+
+.popup h2 span {
+    background: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #AEAEAE;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.popup button {
+    border: none;
+    width: 62.5%;
+    background-color: #F88C70;
+    color: white;
+    margin-bottom: 40px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .popup {
+        width: 80vw;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+    .popup {
+        width: 40vw;
+    }
+}

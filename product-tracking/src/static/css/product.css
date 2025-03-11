@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.cdnfonts.com/css/source-sans-pro");
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.FlexProduct {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-body {
+  background-color: #feefd0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  flex: 1;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 20px;
+  overflow: scroll;
+  padding-bottom: 64px;
+}
+
+#product-header {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  color: white;
+  background-color: orange;
+  background-size: cover;
+  background-position: right;
+  text-align: center;
+  width: 100%;
+  padding: 80px 48px;
+}
+
+#track-body {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+#track-body form {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  border-radius: 10px;
+  background-color: white;
+
+  margin: auto;
+}
+
+#track-body form div {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  width: 75%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0px 20px 20px;
+}
+
+#track-body form div i {
+  color: #ff7474;
+  margin-left: 10px;
+}
+
+#track-body form div input {
+  border: none;
+  background: none;
+  margin-left: 5px;
+  outline: none;
+  width: 100%;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+#track-body form div input:focus::placeholder {
+  opacity: 0;
+}
+
+#track-body form button {
+  background-image: linear-gradient(135deg, #ff7a7a, #f65900);
+  border: none;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#track-body button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffa401;
+
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  width: max-content;
+  align-self: center;
+  padding: 20px 40px;
+  margin-top: 50px;
+}
+
+#track-body button:hover {
+  background-color: white;
+  opacity: 0.8;
+}
+
+#track-body button:active {
+  box-shadow: inset 2px 2px 10px rgb(53, 52, 52);
+}
+
+#product-body {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 32px;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.product-container {
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.product-icon {
+  width: 27%;
+}
+
+.product-info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.product-info span {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  color: #ff5e00;
+}
+
+.product-container:hover {
+  transform: scale(1.05);
+}
+
+.FlexAddProduct {
+  width: 84% !important;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start !important;
+
+  gap: 10px;
+
+  margin: auto;
+}
+
+@media screen and (max-width: 1060px) {
+  #product-body {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #track-body {
+    width: 80vw;
+  }
+
+  #track-body form {
+    width: 100%;
+  }
+
+  #track-body form button {
+    font-size: 1em;
+    margin: 10px 10px 10px 5px;
+    padding: 10px 7.5px 10px 7.5px;
+    width: 20%;
+  }
+
+  #track-body form div {
+    width: 75%;
+    padding: 10px;
+    margin: 10px 5px 10px 10px;
+  }
+
+  #landing-right {
+    position: absolute;
+    transform: scaleX(-1);
+    width: 50vh;
+    left: 0;
+    right: 0;
+    top: 62.5%;
+    margin: auto;
+  }
+
+  #track-body button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-top: 40px;
+  }
+
+  #product-body {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 32px;
+  }
+}

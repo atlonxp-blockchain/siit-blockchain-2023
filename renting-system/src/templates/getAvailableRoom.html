@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  
+
+<head>
+    <meta charset="UTF-8">
+    <title>komfyhomies</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style9.css') }}">
+
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Available Dormitory:</h1>
+        <br>
+        <p>{{alldormNames}} <br> </p>
+        <form action="/getRoomprice" method="POST">
+            Check Dormitory's Available Room
+            <input type="dormName" name="dormName" placeholder="Enter dorm name" required>
+
+            <input type="submit" name="value" value="checkDorm"></input>
+        </form>
+        
+
+
+    
+   
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+@import url("https://fonts.cdnfonts.com/css/source-sans-pro");
+
+* {
+  box-sizing: border-box;
+}
+
+#nav-body {
+  background-color: white;
+  justify-content: space-between;
+  align-content: center;
+  height: 10vh;
+  display: flex;
+  padding: 0px 32px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+#nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+#space {
+  margin-right: 950px;
+}
+
+#nav-logo img {
+  height: 36px;
+}
+
+#nav-logo span {
+  display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+#nav-logo span:nth-child(2) {
+  color: #f17228;
+  margin-left: 10px;
+}
+
+#nav-logo span:nth-child(3) {
+  color: #ffb30e;
+  margin-left: 6px;
+}
+
+.nav-button-bar {
+  display: flex;
+}
+
+.nav-button:not(:first-of-type) {
+  margin-left: 16px;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-icon {
+  width: 36px;
+  align-self: center;
+  margin: 0px 5px 0px 5px;
+}
+
+.button-icon:nth-child(3) {
+  margin-right: 2.5vw;
+}
+
+@media screen and (max-width: 768px) {
+  #nav-body {
+    height: 7.5vh;
+  }
+
+  #nav-logo img {
+    height: 28px;
+  }
+
+  #nav-logo span {
+    font-size: 28px;
+  }
+
+  #nav-logo span:nth-child(2) {
+    margin-left: 5px;
+  }
+
+  #nav-logo span:nth-child(3) {
+    margin-left: 5px;
+  }
+
+  .button-icon {
+    width: 28px;
+    margin: 0px 2.5px 0px 2.5px;
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" , href="{{ url_for('static', filename='css/template.css') }}">
+    <link rel="stylesheet" , href="{{ url_for('static', filename='css/product.css') }}">
+    <link rel="stylesheet" , href="{{ url_for('static', filename='css/product-popup.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0512bbcf48.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        var alertMessage = "{{ messages[0] }}";
+        alert(alertMessage);
+    </script>
+    {% endif %}
+    {% endwith %}
+    <!-- Navbar -->
+    <div id="nav-body">
+        <div id="nav-logo" onclick="window.location.href = '{{ url_for('landing') }}'">
+            <img src="{{ url_for('static', filename='img/nav-logo.png') }}">
+            <span>My</span>
+            <span>Tracker</span>
+        </div>
+        <div class="nav-button-bar">
+            <div class="nav-button">
+                <div id="nav-logo" onclick="window.location.href = '{{ url_for('product') }}'">
+                    <img rc="{{ url_for('static', filename='img/home-icon.png') }}">
+                </div>
+            </div>
+            <div class="nav-button">
+                <div id="nav-logo" onclick="window.location.href = '{{ url_for('my_profile') }}'">
+                    <img src="{{ url_for('static', filename='img/profile-icon.png') }}">
+                </div>
+            </div>
+            <div class="nav-button">
+                <div id="nav-logo" onclick="window.location.href = '{{ url_for('logout') }}'">
+                    <img src="{{ url_for('static', filename='img/logout-icon.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- Content -->
+    <div id="content-body">
+        <div id="product-header">Products
+        </div>
+        <div id="track-body">
+            <div>
+                <form action="/tracking" method="get">
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" name=product_id placeholder="Product ID here">
+                    </div>
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass" style="margin-right:8px"></i> Track
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="FlexProduct">
+            <div id="product-body">
+                {% for product in product_list %}
+                <div class="product-container" onclick="popup('{{product[0]}}')">
+                    <img src="{{ url_for('static', filename='img/product-icon.png') }}" class="product-icon">
+                    <div class="product-info">
+                        <span>ID: {{product[0]}}<br />Name: {{product[1]}}</span>
+                    </div>
+                </div>
+                <div class="popup" id="popup-{{product[0]}}">
+                    <div class="popup-header">
+                        <div class="popuprelative">
+                            <span class="TextProduct">Product ID: {{product[0]}}</span>
+                            <img src="{{ url_for('static', filename='img/close_default.png') }}" id="close-login"
+                                onclick="closePopup()">
+                        </div>
+                    </div>
+                    <span style="margin:10px 0px 10px 0px;">Product Name</span>
+                    <img src="{{ url_for('static', filename='img/product-icon.png') }}" class="product-icon">
+                    <div><button class="BoxButtonProduct">Upload</button></div>
+                    <div id="popup-body">
+                        <div style="width:100%; overflow-wrap: break-word;">
+                            <span class="TextHead"><b>Date Record</b></span>
+                            <p style="padding:0px 40px 0px 40px;">
+                                {{product[6]}}</p>
+                        </div>
+                        <div style="width:100%; overflow-wrap: break-word;">
+                            <span class="TextHead"><b>Origin</b></span>
+                            <p style="padding:0px 40px 0px 40px;">
+                                {{product[2]}}</p>
+                        </div>
+                        <div style="width:100%; overflow-wrap: break-word;">
+                            <span class="TextHead"><b>Manufactured by</b></span>
+                            <p style="padding:0px 40px 0px 40px;">
+                                {{product[3]}}</p>
+                        </div>
+                        <div style="width:100%; overflow-wrap: break-word;">
+                            <span class="TextHead"><b>Detail</b></span>
+                            <p style="padding:0px 40px 0px 40px;">
+                                {{product[4]}}</p>
+                        </div>
+                    </div>
+                    <div class="BoxViewProduct">
+                        <div><button class="BoxButtonProduct" onclick="sendTo('{{product[0]}}')">Send To</button></div>
+                        <div><button class="BoxButtonProduct"
+                                onclick="window.location.href = 'tracking?product_id={{product[0]}}';">View
+                                Track</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup" id="sending-{{product[0]}}">
+                    <div class="popup-header">
+                        <div class="popuprelative">
+                            <span class="TextProduct">Product ID: {{product[0]}}</span>
+                            <img src="{{ url_for('static', filename='img/close_default.png') }}" id="close-login"
+                                onclick="closePopup()">
+                        </div>
+                    </div>
+                    <img src="{{ url_for('static', filename='img/product-icon.png') }}" class="product-icon">
+                    <span style="margin:10px 0px 10px 0px;">{{product[1]}}</span>
+                    <div id="popup-body">
+                        <form
+                            style="width: 90%; display:flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px; margin: 0 14px;"
+                            action="/send_product" method="post">
+                            <div class="TextHead1">Receiver</div>
+                            <input type="text" name="new_owner" placeholder="reciever username" required>
+                            <div class="TextHead1">Product Info</div>
+                            <textarea name="product_info" placeholder="Type some description here" required></textarea>
+                            <div class="TextHead1">Confirm Password</div>
+                            <input type="password" name="password" placeholder="your password to confirm" required>
+                            <input type="hidden" name="product_id" value="{{product[0]}}">
+                            <div
+                                style="margin: 0 auto; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 25px;">
+                                <button type="submit">Send</button>
+                                <button type="button" onclick="closePopup()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="add-product" onclick="openAddProduct();">
+        <img src="{{ url_for('static', filename='img/add-product.png') }}" width="64" height="64">
+    </div>
+
+    <div class="popup" id="add-product-popup">
+        <div class="popuprelative">
+            <div class="popup-header">
+                <span class="TextPopup">Add Product</span>
+                <img src="{{ url_for('static', filename='img/close_default.png') }}" id="close-login"
+                    onclick="closePopup()">
+            </div>
+            <form action="/add_product" method="post" class="FlexAddProduct">
+                <label>Name</label>
+                <textarea class="TextInput" placeholder="Product name" name="product_name"></textarea>
+                <label>Manufacture</label>
+                <textarea class="TextInput" placeholder="{{session.username}}" name="manufacturer"
+                    value="{{session.username}}" disabled></textarea>
+                <label>Origin</label>
+                <textarea class="TextInput" placeholder="Origin country of product" name="origin"></textarea>
+                <label>Detail</label>
+                <textarea class="TextInput" placeholder="Product Details" id="detail"
+                    style="height:100px; overflow-y: scroll;" name="detail"></textarea>
+                <label>Confirm Password</label>
+                <input class="TextInput" type="password" placeholder="Confirm Password" name="password">
+                <button type="submit" style="margin-bottom:40px;">Add Product</button>
+            </form>
+            <img class="ImgPopup1" src="{{ url_for('static', filename='img/landing-right.png') }}" />
+            <img class="ImgPopup2" src="{{ url_for('static', filename='img/deliverycar.png') }}" />
+            <span class="TextPoprelative">tracker</span>
+        </div>
+    </div>
+
+    <script>
+        function popup(productID) {
+            closePopup();
+            document.querySelector("#popup-" + productID).style.display = "flex";
+        }
+
+        function sendTo(productID) {
+            closePopup();
+            document.querySelector("#sending-" + productID).style.display = "flex";
+        }
+
+        function closePopup() {
+            document.querySelectorAll(".popup").forEach(popup => {
+                popup.style.display = "none";
+            })
+        }
+
+        function openAddProduct() {
+            closePopup();
+            document.querySelector("#add-product-popup").style.display = "flex";
+        }
+    </script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Borrow</title>
+</head>
+
+<body>
+	<div class="container">
+		<headerA>
+            <subA style="text-align:left">
+                <a href="index.html">
+                    <img src="images/back.png" width="30px">
+                </a>
+            </subA>
+            <subA>
+                <h1>Borrow</h1>
+            </subA>
+            <subA style="text-align:right">
+                <img src="images/transparent.png" width="30px">
+            </subA>
+        </headerA>
+
+		<label for="itemID">Item ID:</label><br />
+		<input type="text" id="itemIDBorrow" /><br />
+		<label for="itemName">Borrower Name:</label><br />
+		<input type="text" id="borrowBy" /><br />
+		<button class="button" onclick="borrowItem()">Borrow Item</button> <br />
+		<borrowFeed id='borrowFeed'> </borrowFeed>
+	</div>
+	<script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js" type="application/javascript"></script>
+	<script src="storageScript.js"></script>
+</body>
+
+</html>
