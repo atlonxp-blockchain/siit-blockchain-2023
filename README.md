@@ -26,13 +26,13 @@ The projects in this repository were developed as part of the capstone assignmen
 
 ```
 SIIT-Blockchain-Collection/
-„¥„Ÿ„Ÿ contracts/              # Solidity smart contracts
-„¥„Ÿ„Ÿ migrations/             # Deployment scripts (Truffle)
-„¥„Ÿ„Ÿ scripts/                # Deployment scripts (Hardhat)
-„¥„Ÿ„Ÿ frontend/               # Decentralized application frontend
-„¥„Ÿ„Ÿ test/                   # Test cases for smart contracts
-„¥„Ÿ„Ÿ docs/                   # Additional documentation and case studies
-„¤„Ÿ„Ÿ README.md               # This file
+- contracts/              # Solidity smart contracts
+- migrations/             # Deployment scripts (Truffle)
+- scripts/                # Deployment scripts (Hardhat)
+- frontend/               # Decentralized application frontend
+- test/                   # Test cases for smart contracts
+- docs/                   # Additional documentation and case studies
+- README.md               # This file
 ```
 
 ---
